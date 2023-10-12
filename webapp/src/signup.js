@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [sent, setSent] = useState(false); // to inform the user that the email has been sent
     const [error, setError] = useState(null); // to display any error messages from the backend
 
@@ -24,6 +25,11 @@ const Signup = () => {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="Email"
+                    />
+                    <input
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        placeholder="name"
                     />
                     <button onClick={handleSignup}>Sign Up</button>
                     {error && <p style={{color: 'red'}}>{error}</p>}
